@@ -1,0 +1,29 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ifhe-campus-assistant",
+  "compatibility_date": "2025-09-01",
+  "pages_build_output_dir": "./dist",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+  
+  // Environment variables can be set using:
+  // - wrangler pages secret put VARIABLE_NAME --project-name ifhe-campus-assistant
+  // - Local development: Create .dev.vars file (see .dev.vars.example)
+  
+  // Required environment variables for production:
+  // - GEMINI_API_KEY: Google Gemini API key
+  // - GROQ_API_KEY: Groq API key
+  // - OPENROUTER_API_KEY: OpenRouter API key
+  // - GOOGLE_SHEET_ID: Google Sheets document ID
+  // - GOOGLE_SERVICE_ACCOUNT_EMAIL: Service account email
+  // - GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY: Service account private key (JSON escaped)
+  // - ADMIN_API_KEY: Admin authentication key
+  // - SMTP_HOST: Email service host
+  // - SMTP_PORT: Email service port
+  // - SMTP_USER: Email service username
+  // - SMTP_PASS: Email service password
+  // - APP_BASE_URL: Application base URL
+  // - GOOGLE_CSE_ID: Google Custom Search Engine ID (optional)
+  // - GOOGLE_CSE_API_KEY: Google Custom Search API key (optional)
+}
