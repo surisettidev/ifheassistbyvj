@@ -303,31 +303,69 @@ app.get('/', (c) => {
         </section>
 
         <!-- Admin Section -->
-        <section id="admin" class="section-page hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div class="mb-8">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">
-                        <i class="fas fa-cog mr-3 text-purple-600"></i>Admin Panel
-                    </h2>
-                    <p class="text-lg text-gray-600">Manage events, notices, and monitor chat logs</p>
-                </div>
-                
-                <div id="admin-login" class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-8">
-                    <h3 class="text-xl font-semibold mb-4 text-center">Admin Login</h3>
-                    <div class="space-y-4">
-                        <input type="password" id="admin-api-key" placeholder="Enter Admin API Key" 
-                               class="w-full border border-gray-300 rounded-lg px-4 py-3">
-                        <button onclick="adminLogin()" class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition duration-300">
-                            <i class="fas fa-sign-in-alt mr-2"></i>Login
-                        </button>
-                    </div>
-                </div>
-                
-                <div id="admin-dashboard" class="hidden">
-                    <!-- Admin dashboard content will be loaded here -->
-                </div>
-            </div>
-        </section>
+        <!-- Admin Section -->
+<section id="admin" class="section-page hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="mb-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">
+        <i class="fas fa-cog mr-3 text-purple-600"></i>Admin Panel
+      </h2>
+      <p class="text-lg text-gray-600">Manage events, notices, and monitor chat logs</p>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="admin-dashboard" class="space-y-12">
+      <!-- Events Management -->
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <h3 class="text-xl font-semibold mb-4">Manage Events</h3>
+        <form id="event-form" class="space-y-4">
+          <input type="text" id="event-title" placeholder="Event Title"
+                 class="w-full border border-gray-300 rounded-lg px-4 py-2">
+          <textarea id="event-description" placeholder="Event Description"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2"></textarea>
+          <input type="date" id="event-date"
+                 class="w-full border border-gray-300 rounded-lg px-4 py-2">
+          <button type="submit"
+                  class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+            Add Event
+          </button>
+        </form>
+        <div id="events-list" class="mt-6"></div>
+      </div>
+
+      <!-- Notices Management -->
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <h3 class="text-xl font-semibold mb-4">Manage Notices</h3>
+        <form id="notice-form" class="space-y-4">
+          <input type="text" id="notice-title" placeholder="Notice Title"
+                 class="w-full border border-gray-300 rounded-lg px-4 py-2">
+          <textarea id="notice-content" placeholder="Notice Content"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2"></textarea>
+          <select id="notice-category"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2">
+            <option value="General">General</option>
+            <option value="Academic">Academic</option>
+            <option value="Events">Events</option>
+          </select>
+          <button type="submit"
+                  class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">
+            Add Notice
+          </button>
+        </form>
+        <div id="notices-list" class="mt-6"></div>
+      </div>
+
+      <!-- Chat Logs -->
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <h3 class="text-xl font-semibold mb-4">Chat Logs</h3>
+        <div id="chat-logs" class="h-64 overflow-y-auto border border-gray-200 rounded-lg p-4">
+          <p class="text-gray-500">Loading chat logs...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
     </main>
 
     <!-- Toast Notifications -->
